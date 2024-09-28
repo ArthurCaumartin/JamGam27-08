@@ -15,6 +15,6 @@ public class CanvasManager : MonoBehaviour
     private void Update()
     {
         _scoreToPrint = Mathf.Lerp(_scoreToPrint, _targetScore, Time.deltaTime * 10f);
-        _scoreText.text = ((int)_scoreToPrint + 1).ToString();
+        _scoreText.text = ((int)_scoreToPrint).ToString();
     }
 }
