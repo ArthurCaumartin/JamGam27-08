@@ -9,7 +9,7 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private Transform _ballTarget;
     [SerializeField] private float _ballSpeed = 5;
     [SerializeField] private float _spawnRate = 1.5f;
-    [SerializeField] private List<ScriptableBall> _ballTypeList;
+    [SerializeField] private List<ScriptableColor> _ballTypeList;
     private List<GameObject> _ballList = new List<GameObject>();
     private float _time;
 

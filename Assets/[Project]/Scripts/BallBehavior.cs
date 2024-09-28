@@ -12,14 +12,15 @@ public class BallBehavior : MonoBehaviour
     private bool _hasBeenGrab = false;
     private Rigidbody2D _rb;
     private float _shakeFactor = 0;
-    public void Initialize(float speed, Transform startTransform, Transform targetTransform, ScriptableBall ballType)
+
+    public void Initialize(float speed, Transform startTransform, Transform targetTransform, ScriptableColor ballType)
     {
         _speed = speed;
         _start = startTransform;
         _target = targetTransform;
         transform.position = startTransform.position;
         _rb = GetComponent<Rigidbody2D>();
-        GetComponent<BallDescriptor>().SetBall(ballType);
+        GetComponent<ColorDescriptor>().SetColor(ballType);
     }
 
     private void Update()

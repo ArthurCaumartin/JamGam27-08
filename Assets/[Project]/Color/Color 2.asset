@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dd73c7d2f114754bb4eb7aa11fa6261, type: 3}
-  m_Name: Ball 1
+  m_Name: Color 2
   m_EditorClassIdentifier: 
-  color: {r: 0.68422544, g: 0.5058824, b: 0.85882354, a: 1}
+  color: {r: 0.8867924, g: 0.6567283, b: 0.74190557, a: 1}
