@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1270510838204785067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7838898452566712578}
+  - component: {fileID: 309130657638446843}
+  m_Layer: 0
+  m_Name: Tractor Beam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7838898452566712578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270510838204785067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5384044462374878092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309130657638446843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270510838204785067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55c51d870164ce4586e0d6cfa8c4057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug_Color: {r: 0.49865073, g: 1, b: 0.41037738, a: 0.3882353}
+  _grabForce: 10
+  _grabSpeed: 0.63
+  _grabSize: 0.5
+  _grabDistance: 15
+  _ballLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &2564347764075771683
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +64,7 @@ GameObject:
   - component: {fileID: 4179989413590008565}
   - component: {fileID: 26999621007833553}
   - component: {fileID: 857381614929660202}
+  - component: {fileID: 5159361772506716882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -108,6 +161,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5159361772506716882
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564347764075771683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &3716345872668453793
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +207,7 @@ GameObject:
   - component: {fileID: 7429196297896183519}
   - component: {fileID: 8457968997821344147}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Body Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,6 +311,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7429196297896183519}
+  - {fileID: 7838898452566712578}
   m_Father: {fileID: 5935315098475244573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7903125904837325175
