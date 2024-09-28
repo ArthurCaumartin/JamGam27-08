@@ -11,7 +11,10 @@ public class Trash : MonoBehaviour
         if (!ball) return;
         print(ball.name + " go in trash");
         ColorDescriptor c = other.GetComponent<ColorDescriptor>();
-        if (c.IsSameColor(_color.ScriptableColor))
+        if (c)
+        {
+            GameManager.instance.AddScore(c.IsSameColor(_color.ScriptableColor));
             Destroy(ball.gameObject);
+        }
     }
 }

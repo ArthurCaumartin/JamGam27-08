@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd73c7d2f114754bb4eb7aa11fa6261, type: 3}
   m_Name: Color Evile
   m_EditorClassIdentifier: 
+  type: 2
   color: {r: 1, g: 0, b: 0, a: 1}
