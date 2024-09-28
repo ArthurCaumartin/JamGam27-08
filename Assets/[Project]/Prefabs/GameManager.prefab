@@ -221,6 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673977808644840353}
+  - component: {fileID: 1136616675662396820}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -244,6 +245,21 @@ Transform:
   - {fileID: 3985069120780980891}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136616675662396820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393808459529410229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a710e73d42e5dc47a1968f23dc5c866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 5248489907535213409}
+  _scoreToAdd: 200
+  _currentScore: 0
 --- !u!1 &8679369979894993479
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3985069120780980891}
+  - component: {fileID: 5248489907535213409}
   - component: {fileID: 549127343379126390}
   - component: {fileID: 1693345949204832981}
   - component: {fileID: 4106845389807325150}
@@ -284,6 +301,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &5248489907535213409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679369979894993479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efa1984b672ff343b9c5519d6197344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 8233553376098762264}
 --- !u!223 &549127343379126390
 Canvas:
   m_ObjectHideFlags: 0
