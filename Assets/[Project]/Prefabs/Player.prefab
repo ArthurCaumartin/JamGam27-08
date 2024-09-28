@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062f3bb3fe7d7c44897f80eb9a65645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tractorBeam: {fileID: 1270510838204785067}
   _rotateContainer: {fileID: 5384044462374878092}
   _moveSpeed: 15
   _acceleration: 10

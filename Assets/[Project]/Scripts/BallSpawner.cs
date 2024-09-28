@@ -11,6 +11,7 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private float _spawnRate = 1.5f;
     [SerializeField] private List<ScriptableColor> _goodColorList;
     [SerializeField] private List<ScriptableColor> _badColorList;
+    private List<GameObject> _ballList = new List<GameObject>();
     private float _time;
 
     private void Update()
@@ -29,6 +30,8 @@ public class BallSpawner : MonoBehaviour
         BallBehavior ball = newBall.GetComponent<BallBehavior>();
         ScriptableColor s_color = Random.value > .5f ? _goodColorList[Random.Range(0, _goodColorList.Count)] : _badColorList[Random.Range(0, _badColorList.Count)];
         ball.Initialize(_ballSpeed, transform, _ballTarget, s_color);
+
+        _ballList.Add(newBall);
     }
 }
 

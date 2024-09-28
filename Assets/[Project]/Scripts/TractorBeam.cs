@@ -11,6 +11,11 @@ public class TractorBeam : MonoBehaviour
     [SerializeField] private float _grabDistance = 0.5f;
     [SerializeField] private LayerMask _ballLayer;
 
+    private void Start()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _grabSize, transform.right, _grabDistance);
