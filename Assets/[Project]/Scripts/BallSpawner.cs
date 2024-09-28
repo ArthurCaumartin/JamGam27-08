@@ -9,14 +9,14 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private Transform _ballTarget;
     [SerializeField] private float _ballSpeed = 5;
     [SerializeField] private float _spawnRate = 1.5f;
-    [SerializeField] private List<ScriptableColor> _ballTypeList;
-    private List<GameObject> _ballList = new List<GameObject>();
+    [SerializeField] private List<ScriptableColor> _goodColorList;
+    [SerializeField] private List<ScriptableColor> _badColorList;
     private float _time;
 
     private void Update()
     {
         _time += Time.deltaTime;
-        if(_time >= _spawnRate)
+        if (_time >= _spawnRate)
         {
             _time = 0;
             SpawnBall();
@@ -27,9 +27,8 @@ public class BallSpawner : MonoBehaviour
     {
         GameObject newBall = Instantiate(_ballPrefab, transform.position, Quaternion.identity, transform);
         BallBehavior ball = newBall.GetComponent<BallBehavior>();
-        ball.Initialize(_ballSpeed, transform, _ballTarget, _ballTypeList[Random.Range(0, _ballTypeList.Count)]);
-        _ballList.Add(newBall);
-        // print("Spawn ball : " + newBall.name);
+        ScriptableColor s_color = Random.value > .5f ? _goodColorList[Random.Range(0, _goodColorList.Count)] : _badColorList[Random.Range(0, _badColorList.Count)];
+        ball.Initialize(_ballSpeed, transform, _ballTarget, s_color);
     }
 }
 

@@ -7,20 +7,23 @@ public class BallBehavior : MonoBehaviour
     private float _speed;
     private Transform _start;
     private Transform _target;
-    private float _time;
+    private float _lerpTime;
 
     private bool _hasBeenGrab = false;
     private Rigidbody2D _rb;
     private float _shakeFactor = 0;
+    private ColorDescriptor _colorDescriptor;
 
-    public void Initialize(float speed, Transform startTransform, Transform targetTransform, ScriptableColor ballType)
+    public void Initialize(float speed, Transform startTransform, Transform targetTransform, ScriptableColor color)
     {
         _speed = speed;
         _start = startTransform;
         _target = targetTransform;
         transform.position = startTransform.position;
+        
         _rb = GetComponent<Rigidbody2D>();
-        GetComponent<ColorDescriptor>().SetColor(ballType);
+        _colorDescriptor = GetComponent<ColorDescriptor>();
+        _colorDescriptor.SetColor(color);
     }
 
     private void Update()
@@ -33,10 +36,10 @@ public class BallBehavior : MonoBehaviour
 
     private void LerpMovement()
     {
-        _time += Time.deltaTime * _speed;
-        Vector2 pos = Vector2.Lerp(_start.position, _target.position, _time);
+        _lerpTime += Time.deltaTime * _speed;
+        Vector2 pos = Vector2.Lerp(_start.position, _target.position, _lerpTime);
         transform.position = pos + new Vector2(0, Mathf.Sin(Time.time * 50) * 0.1f * _shakeFactor);
-        if (_time >= 1)
+        if (_lerpTime >= 1)
         {
             // print("Destroy ball : " + name);
             Destroy(gameObject);
@@ -45,6 +48,7 @@ public class BallBehavior : MonoBehaviour
 
     public void GrabBall(float grabTime, float grabForce, Transform graber)
     {
+        if(_colorDescriptor.ScriptableColor.type == ColorType.Evile) return;
         if (_hasBeenGrab)
         {
             Vector2 graberDirection = (graber.position - transform.position).normalized;
