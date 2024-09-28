@@ -38,7 +38,7 @@ public class BallBehavior : MonoBehaviour
         transform.position = pos + new Vector2(0, Mathf.Sin(Time.time * 50) * 0.1f * _shakeFactor);
         if (_time >= 1)
         {
-            print("Destroy ball : " + name);
+            // print("Destroy ball : " + name);
             Destroy(gameObject);
         }
     }

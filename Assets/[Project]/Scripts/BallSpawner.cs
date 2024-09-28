@@ -29,7 +29,7 @@ public class BallSpawner : MonoBehaviour
         BallBehavior ball = newBall.GetComponent<BallBehavior>();
         ball.Initialize(_ballSpeed, transform, _ballTarget, _ballTypeList[Random.Range(0, _ballTypeList.Count)]);
         _ballList.Add(newBall);
-        print("Spawn ball : " + newBall.name);
+        // print("Spawn ball : " + newBall.name);
     }
 }
 

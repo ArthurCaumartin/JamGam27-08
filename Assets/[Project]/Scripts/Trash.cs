@@ -9,6 +9,7 @@ public class Trash : MonoBehaviour
     {
         BallBehavior ball = other.GetComponent<BallBehavior>();
         if (!ball) return;
+        print(ball.name + " go in trash");
         ColorDescriptor c = other.GetComponent<ColorDescriptor>();
         if (c.IsSameColor(_color.ScriptableColor))
             Destroy(ball.gameObject);

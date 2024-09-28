@@ -127,8 +127,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5793099141031597963}
   - component: {fileID: 762861134228791765}
-  - component: {fileID: 9120382138267280581}
   - component: {fileID: 3222217220814861578}
+  - component: {fileID: 9120382138267280581}
   - component: {fileID: 8220353525702039846}
   m_Layer: 0
   m_Name: TRASH
@@ -169,6 +169,19 @@ MonoBehaviour:
   _scriptableColor: {fileID: 11400000, guid: 77fb1947d5bd3e54a99ce7e57fdcd460, type: 2}
   _rendererList:
   - {fileID: 2590535539274397029}
+--- !u!114 &3222217220814861578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651537599332196794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7537cbe8d937b2469fd88f2b94ebebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {fileID: 762861134228791765}
 --- !u!61 &9120382138267280581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,19 +227,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5386767, y: 1.7978417}
   m_EdgeRadius: 0
---- !u!114 &3222217220814861578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2651537599332196794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7537cbe8d937b2469fd88f2b94ebebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {fileID: 0}
 --- !u!50 &8220353525702039846
 Rigidbody2D:
   serializedVersion: 4

@@ -2259,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 309130657638446843, guid: ad3b927e779d8d14bb838cad8019f672, type: 3}
       propertyPath: _grabForce
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 309130657638446843, guid: ad3b927e779d8d14bb838cad8019f672, type: 3}
       propertyPath: _grabSpeed
