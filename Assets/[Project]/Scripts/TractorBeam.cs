@@ -14,7 +14,7 @@ public class TractorBeam : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _grabSize, transform.right, _grabDistance);
-        print(hits.Length);
+        // print(hits.Length);
         if (hits.Length == 0)
         {
             return;
