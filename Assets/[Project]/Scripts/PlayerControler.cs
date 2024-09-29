@@ -11,19 +11,29 @@ public class PlayerControler : MonoBehaviour
     private Vector2 _direction;
     private InputAction _moveAction;
     private InputAction _enableTractorAction;
+    private InputAction _swapTractorAction;
     private Rigidbody2D _rb;
     private Vector2 _rightTarget;
+    public float beamAtraction;
+    public static PlayerControler instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
         _moveAction = GetComponent<PlayerInput>().actions.FindAction("Move");
         _enableTractorAction = GetComponent<PlayerInput>().actions.FindAction("EnableTractor");
+        _swapTractorAction = GetComponent<PlayerInput>().actions.FindAction("SwapTractor");
         _rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
         _tractorBeam.SetActive(_enableTractorAction.ReadValue<float>() > .5f);
+        beamAtraction = _swapTractorAction.ReadValue<float>() > .5f ? -1 : 1;
         Move();
     }
 

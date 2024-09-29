@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private CanvasManager _canvas;
     [Space]
+
+    [SerializeField] private int _playerLife = 3;
+    [Space]
+
     [SerializeField] private int _scoreToAdd;
     [SerializeField] private int _currentScore;
     [Space]
@@ -29,6 +33,12 @@ public class GameManager : MonoBehaviour
             _canvas.SetScoreText(Random.Range(5, 10000), true);
             _canvas.SetScoreText(_currentScore);
         }
+    }
+
+    public void DamagePlayer()
+    {
+        AddScore(false);
+        _playerLife--;
     }
 
     public float GetGameSpeed()
