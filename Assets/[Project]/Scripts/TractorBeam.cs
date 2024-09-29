@@ -36,7 +36,7 @@ public class TractorBeam : MonoBehaviour
         foreach (var item in hits)
         {
             BallBehavior ball = item.collider.GetComponent<BallBehavior>();
-            ball?.GrabBall(_grabSpeed * Time.fixedDeltaTime, _grabForce, transform);
+            ball?.GrabBall(_grabSpeed * Time.fixedDeltaTime * GameManager.instance.GetGameSpeed(), _grabForce, transform);
             if(Vector2.Distance(item.transform.position, _snapTransform.position) < 1f && item.collider.gameObject.layer == 10)
             {
                 _snapBall = item.transform;

@@ -16,7 +16,7 @@ public class BallSpawner : MonoBehaviour
 
     private void Update()
     {
-        _time += Time.deltaTime;
+        _time += Time.deltaTime * GameManager.instance.GetGameSpeed();
         if (_time >= _spawnRate)
         {
             _time = 0;

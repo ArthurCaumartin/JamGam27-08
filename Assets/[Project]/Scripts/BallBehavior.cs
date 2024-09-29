@@ -36,7 +36,7 @@ public class BallBehavior : MonoBehaviour
 
     private void LerpMovement()
     {
-        _lerpTime += Time.deltaTime * _speed;
+        _lerpTime += Time.deltaTime * _speed * GameManager.instance.GetGameSpeed();
         Vector2 pos = Vector2.Lerp(_start.position, _target.position, _lerpTime);
         transform.position = pos + new Vector2(0, Mathf.Sin(Time.time * 50) * 0.1f * _shakeFactor);
         if (_lerpTime >= 1)

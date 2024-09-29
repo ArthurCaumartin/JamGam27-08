@@ -260,6 +260,11 @@ MonoBehaviour:
   _canvas: {fileID: 5248489907535213409}
   _scoreToAdd: 200
   _currentScore: 0
+  _maxMultSpeed: 3
+  _minMultSpeed: 1
+  _maxScoreSpeed: 2500
+  _minScoreSpeed: 500
+  _gameSpeed: 1
 --- !u!1 &8679369979894993479
 GameObject:
   m_ObjectHideFlags: 0
