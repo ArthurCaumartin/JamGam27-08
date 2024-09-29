@@ -531,10 +531,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1920453805578142790, guid: 2d3445bd69f4f6a439f14c57cc206e73, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.6
-      objectReference: {fileID: 0}
     - target: {fileID: 4610812467380710439, guid: 2d3445bd69f4f6a439f14c57cc206e73, type: 3}
       propertyPath: _playerTransform
       value: 
@@ -694,7 +690,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: 655c11e94954f994e8d2e18ca8c51b11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1608,10 +1604,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 26999621007833553, guid: ad3b927e779d8d14bb838cad8019f672, type: 3}
-      propertyPath: _moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2564347764075771683, guid: ad3b927e779d8d14bb838cad8019f672, type: 3}
       propertyPath: m_Name
       value: Player
