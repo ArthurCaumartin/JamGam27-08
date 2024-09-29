@@ -12,14 +12,31 @@ public class SoundManager : MonoBehaviour
     [Space]
     public AudioClip _repulsion;
     public AudioClip _ballHit;
+    private bool _timeDialogue;
+    private float _dialoguedelay;
 
     void Awake()
     {
         instance = this;
     }
 
-    public void PlayOnShot(AudioClip clip)
+    void Update()
+    {
+        if(_timeDialogue)
+        {
+            _dialoguedelay += Time.deltaTime;
+            if(_dialoguedelay > .5f)
+            {
+                _dialoguedelay = 0;
+                _timeDialogue = false;
+                PlayOnShot(_playerDlialogue[Random.Range(0, _playerDlialogue.Count)]);
+            }
+        }
+    }
+
+    public void PlayOnShot(AudioClip clip, bool playDialogueAfter = false)
     {
         _source.PlayOneShot(clip);
+        if(playDialogueAfter) _timeDialogue = true;
     }
 }

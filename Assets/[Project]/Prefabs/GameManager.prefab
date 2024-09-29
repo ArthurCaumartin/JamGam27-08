@@ -42,9 +42,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fb68a1cc83f441c47a0f02130683d9ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -174,10 +174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 9021748684060869373}
-  _damageclip: {fileID: 0}
-  _playerDlialogue: []
+  _damageclip: {fileID: 8300000, guid: f9f4f4baea8b70c4fb9874f23b8d5108, type: 3}
+  _playerDlialogue:
+  - {fileID: 8300000, guid: 0d5a07311501c1844ade4b3d0a6f755f, type: 3}
+  - {fileID: 8300000, guid: ce38728ae38acec4c949f163e20ce19c, type: 3}
+  - {fileID: 8300000, guid: f4c98ba6fe7bc134abfca0d720609475, type: 3}
+  - {fileID: 8300000, guid: 1b4b1c04da100244baf1c42f36a68aa2, type: 3}
   _repulsion: {fileID: 0}
-  _ballHit: {fileID: 0}
+  _ballHit: {fileID: 8300000, guid: 3c3971f5ed92b304d89052e636b42622, type: 3}
 --- !u!82 &9021748684060869373
 AudioSource:
   m_ObjectHideFlags: 0
@@ -190,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -534,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 5248489907535213409}
-  _playerLife: 3
+  _playerLife: 924
   _scoreToAdd: 200
   _currentScore: 0
   _maxMultSpeed: 3

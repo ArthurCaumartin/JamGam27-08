@@ -100,4 +100,9 @@ public class BallBehavior : MonoBehaviour
         }
         _shakeFactor += grabTime;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        
+    }
 }

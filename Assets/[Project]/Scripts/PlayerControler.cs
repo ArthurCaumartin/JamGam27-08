@@ -51,6 +51,16 @@ public class PlayerControler : MonoBehaviour
         // SoundManager.instance.PlayOnShot();
     }
 
+    public void OnSwapTractor(InputValue value)
+    {
+        print("YQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+        if (value.Get<float>() > 0.9f)
+        {
+            _tractorBeam.GetComponent<TractorBeam>().PushSnap();
+        }
+    }
+
+
     private void OnLook(InputValue value)
     {
         Vector2 newRight = value.Get<Vector2>().normalized;

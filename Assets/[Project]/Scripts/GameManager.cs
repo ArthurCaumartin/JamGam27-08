@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         AddScore(false);
         _playerLife--;
+        SoundManager.instance.PlayOnShot(SoundManager.instance._damageclip, true);
     }
 
     public float GetGameSpeed()
