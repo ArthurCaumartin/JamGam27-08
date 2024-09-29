@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ReversePolarity",
+                    "name": "SwapTractor",
                     "type": "Button",
                     "id": "a67e7a0f-709a-4f22-8375-3481aa6df782",
                     "expectedControlType": "Button",
@@ -83,7 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ReversePolarity",
+                    "action": "SwapTractor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

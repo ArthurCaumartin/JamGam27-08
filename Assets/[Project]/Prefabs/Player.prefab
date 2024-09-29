@@ -386,9 +386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tractorBeam: {fileID: 1270510838204785067}
   _rotateContainer: {fileID: 5384044462374878092}
-  _moveSpeed: 15
+  _moveSpeed: 10
   _acceleration: 10
   _rotateSpeed: 15
+  beamAtraction: 0
 --- !u!50 &857381614929660202
 Rigidbody2D:
   serializedVersion: 4

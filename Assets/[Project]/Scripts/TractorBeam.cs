@@ -15,7 +15,6 @@ public class TractorBeam : MonoBehaviour
     [SerializeField] private LayerMask _ballLayer;
     private Transform _snapBall;
 
-
     private void FixedUpdate()
     {
         if (_snapBall)

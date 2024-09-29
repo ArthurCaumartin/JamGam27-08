@@ -28,7 +28,7 @@ public class BallSpawner : MonoBehaviour
     {
         GameObject newBall = Instantiate(_ballPrefab, transform.position, Quaternion.identity, transform);
         BallBehavior ball = newBall.GetComponent<BallBehavior>();
-        ScriptableColor s_color = Random.value > .5f ? _goodColorList[Random.Range(0, _goodColorList.Count)] : _badColorList[Random.Range(0, _badColorList.Count)];
+        ScriptableColor s_color = Random.value > .2f ? _goodColorList[Random.Range(0, _goodColorList.Count)] : _badColorList[Random.Range(0, _badColorList.Count)];
         ball.Initialize(_ballSpeed, transform, _ballTarget, s_color);
 
         _ballList.Add(newBall);
