@@ -1,4 +1,6 @@
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
@@ -42,6 +44,11 @@ public class PlayerControler : MonoBehaviour
         _direction = Vector2.Lerp(_direction, _moveAction.ReadValue<Vector2>(), Time.fixedDeltaTime * _acceleration);
         _rb.MovePosition(_rb.position + (_direction * _moveSpeed * Time.fixedDeltaTime));
         _rotateContainer.right = Vector2.Lerp(_rotateContainer.right, _rightTarget, Time.fixedDeltaTime * _rotateSpeed);
+    }
+
+    private void OnDash(InputValue value)
+    {
+        // SoundManager.instance.PlayOnShot();
     }
 
     private void OnLook(InputValue value)

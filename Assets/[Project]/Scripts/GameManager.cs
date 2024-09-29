@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         int toAdd = isGood ? _scoreToAdd : -_scoreToAdd;
         print("To Add : " + toAdd);
         _currentScore += (int)(toAdd * Random.Range(0.9f, 1.1f));
+        _currentScore = (int)Mathf.Clamp(_currentScore, 0, Mathf.Infinity);
         _canvas.SetScoreText(_currentScore);
     }
 }
