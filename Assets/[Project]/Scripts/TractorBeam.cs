@@ -60,6 +60,7 @@ public class TractorBeam : MonoBehaviour
     {
         if (_snapBall)
         {
+            SoundManager.instance.PlayOnShot(SoundManager.instance._repulsion);
             _snapTime = 0;
             Rigidbody2D rb = _snapBall.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.right * 300, ForceMode2D.Impulse);

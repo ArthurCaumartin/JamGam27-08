@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
     {
         AddScore(false);
         _playerLife--;
+        if(_playerLife == 0)
+            SceneManager.LoadScene("TNul");
+        _canvas.SetHeart(_playerLife);
         SoundManager.instance.PlayOnShot(SoundManager.instance._damageclip, true);
     }
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _fxSource;
+    [SerializeField] private AudioSource _musicSource;
     [Space]
     public AudioClip _damageclip;
     public List<AudioClip> _playerDlialogue = new List<AudioClip>();
@@ -22,6 +23,7 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
+        _musicSource.pitch = GameManager.instance.GetGameSpeed();
         if(_timeDialogue)
         {
             _dialoguedelay += Time.deltaTime;
@@ -36,7 +38,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayOnShot(AudioClip clip, bool playDialogueAfter = false)
     {
-        _source.PlayOneShot(clip);
+        _fxSource.PlayOneShot(clip);
         if(playDialogueAfter) _timeDialogue = true;
     }
 }

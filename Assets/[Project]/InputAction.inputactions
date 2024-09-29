@@ -99,7 +99,7 @@
                 {
                     "name": "",
                     "id": "24374af8-3f15-4035-810c-467fe35cb70e",
-                    "path": "<XInputController>/buttonSouth",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

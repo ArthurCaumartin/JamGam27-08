@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -10,6 +11,8 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5;
     [SerializeField] private float _acceleration = 20;
     [SerializeField] private float _rotateSpeed = 10;
+    [SerializeField] private float _dashLenth = 5;
+    [SerializeField] private float _dashSpeed = 5;
     private Vector2 _direction;
     private InputAction _moveAction;
     private InputAction _enableTractorAction;
@@ -18,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 _rightTarget;
     public float beamAtraction;
     public static PlayerControler instance;
+    private bool _isDashing = false;
 
     void Awake()
     {
@@ -41,6 +45,7 @@ public class PlayerControler : MonoBehaviour
 
     private void Move()
     {
+        if(_isDashing) return;
         _direction = Vector2.Lerp(_direction, _moveAction.ReadValue<Vector2>(), Time.fixedDeltaTime * _acceleration);
         _rb.MovePosition(_rb.position + (_direction * _moveSpeed * Time.fixedDeltaTime));
         _rotateContainer.right = Vector2.Lerp(_rotateContainer.right, _rightTarget, Time.fixedDeltaTime * _rotateSpeed);
@@ -48,7 +53,18 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDash(InputValue value)
     {
-        // SoundManager.instance.PlayOnShot();
+        _isDashing = true;
+        Vector2 dashDirection = _moveAction.ReadValue<Vector2>();
+        if(dashDirection == Vector2.zero)
+        {
+            _isDashing = false;
+            return;
+        }
+        
+        transform.DOMove(transform.TransformPoint(dashDirection.normalized * _dashLenth), _dashSpeed)
+        .SetSpeedBased()
+        .SetEase(Ease.Linear)
+        .OnComplete(() => _isDashing = false);
     }
 
     public void OnSwapTractor(InputValue value)
